@@ -135,12 +135,13 @@ function WalletConnectButton() {
                   address: addressArray[0],
                 };
               } else {
-                  setBtnText("No account found")
+                  setBtnText("No account connected")
                 return {
                   address: "",
                 };
               };
-        } catch (error) {
+        } catch (error) { // Wwhen user rejects the request
+            setDisabled(false);                       
             console.error(error);
             return {
                 address: ""
