@@ -165,7 +165,8 @@ function WalletConnectButton() {
               setBtnText(addressFormatter(accounts[0]))
             } else {
               setWallet("");
-              setBtnText("No accounts detected");
+              setBtnText("Connect");
+              setDisabled(false);
             }
           });
         } else {
