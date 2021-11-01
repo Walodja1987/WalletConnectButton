@@ -1,4 +1,4 @@
-# WalletConnectButton
+# Wallet Connect Button Example
 This is a simple example how to create a MetaMask wallet connect button in a React application. It implements the following functionality:
 * Allows user to trigger MetaMask's onboarding process (i.e. forwards user to MetaMask's download page), if MetaMask is not installed
 * Disables button on click
