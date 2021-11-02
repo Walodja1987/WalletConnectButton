@@ -46,12 +46,14 @@ function WalletConnectButton() {
         // Check whether MetaMask is installed
         MetaMaskClientCheck();
         
-        // Get current wallet connected (useful after refresh of page and used to display in the button that you are already connected)
-        const { address } = await getCurrentWalletConnected(); 
-        setWallet(address);
+        if (isMetaMaskInstalled()) {
+          // Get current wallet connected (useful after refresh of page and used to display in the button that you are already connected)
+          const { address } = await getCurrentWalletConnected(); 
+          setWallet(address);
 
-        // Add wallet listener to handle account changes by the user
-        addWalletListener();
+          // Add wallet listener to handle account changes by the user
+          addWalletListener();
+        }
     },[])
 
     // Check whether MetaMask Chrome extension is installed
@@ -65,6 +67,7 @@ function WalletConnectButton() {
     const MetaMaskClientCheck = () => {
         if (!isMetaMaskInstalled()) {
             setBtnText("Install Metamask");
+            console.log("Hello")
         } else {
             setBtnText("Connect");
         }
